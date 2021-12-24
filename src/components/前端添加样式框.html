@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Players</title>
+		<link rel="stylesheet" href="Codelobster6.css" type="text/css">
+		
+	</head>
+	<body>
+	<div>
+		<p> Apple </p>
+		<p> Pear </p>
+		<p> HuangWen </p>
+		<p> HanJunLan </p>
+		
+	</div>
+	<button onclick="createPlayer()">Add player</button>
+	<button onclick="createMultiplePlayers()">Create players</button>
+	<button onclick="removeAllPlayers()">Remove all players</button>
+	</body>
+</html>
+<style>
+p{
+	font-family: :'arial';
+	text-transform: :uppercase;
+	text-align: :center;
+	border: 2px solid black;
+	background: red;
+	color: orange;
+	box-shadow: 1px 1px 2px grey;
+	border-radius: 10px;
+	padding: 30px 20px;
+	display: inline-block;
+	cursor: pointer;
+}
+p:hover{
+	background-color:lightgrey;
+	color:white;
+}
+</style>
+<script>
+var allP=document.querySelectorAll('p');
+for(i = 0; i < allP.length; i++){
+	allP[i].addEventListener('click',updateName);
+}
+
+function updateName(){
+			let name = prompt('Enter a new name');
+			this.textContent = name;
+		}
+		
+function createPlayer(){
+	 let name = prompt('Enter a new name');
+	 let p2=document.createElement("p");
+	 p2.textContent=name;
+	 
+	 let div=document.querySelector('div');
+	 div.appendChild(p2);
+
+	
+}		
+function removeAllPlayers(){
+	//get the div tagg
+	let div=document.querySelector('div');
+	//empty it by settings innerHTML to ''
+	div.innerHTML='';
+}
+function createMultiplePlayers(){
+	
+}
+</script>
